@@ -3,7 +3,7 @@ import { toLowerCamelCase } from './util';
 
 export function activate(context: vscode.ExtensionContext) {
 	context.subscriptions.push(
-		vscode.commands.registerTextEditorCommand('faster-enum.toLowerCamelCase', (textEditor, edit) => {
+		vscode.commands.registerTextEditorCommand('string-util-for-vs-code.toLowerCamelCase', (textEditor, edit) => {
 			if (textEditor.selection.isEmpty) { // 未选中文本直接返回
 				return;
 			}

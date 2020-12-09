@@ -1,6 +1,6 @@
 {
-  "name": "faster-enum",
-	"displayName": "faster-enum",
+  "name": "string-util-for-vs-code",
+	"displayName": "string-util-for-vs-code",
 	"description": "enum小工具",
 	"version": "0.0.1",
 	"engines": {
@@ -10,7 +10,7 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:faster-enum.toLowerCamelCase"
+        "onCommand:string-util-for-vs-code.toLowerCamelCase"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -18,15 +18,15 @@
 			"editor/context": [
 				{
 					"when": "editorFocus",
-					"command": "faster-enum.toLowerCamelCase"
+					"command": "string-util-for-vs-code.toLowerCamelCase"
 				}
 			]
 		},
 		"commands": [
 			{
-				"command": "faster-enum.toLowerCamelCase",
+				"command": "string-util-for-vs-code.toLowerCamelCase",
 				"title": "toLowerCamelCase",
-				"category": "faster-enum"
+				"category": "string-util-for-vs-code"
 			}
 		]
 	},
