@@ -1,11 +1,12 @@
-export const toLowerCamelCase = (str: string) => {
-    if (str.length < 2) {
-        return str.toLowerCase();
-    }
-    const [firstWords, ...otherWords] = str.split('_'); // str.length 必定大于0
-    return firstWords.toLowerCase() + otherWords.filter(word => !!word).map(word => word[0].toUpperCase() + word.slice(1, word.length).toLowerCase()).join('');
-}
+import { camelCase, snakeCase } from 'lodash';
+import { Range, TextEditor } from 'vscode';
 
-export const toUpperCaseEnum = (str: string) => {
-    return str.replace(/([A-Z])/g, '_$&').toUpperCase();
+export const getTextInfoFromSelection = (textEditor: TextEditor) => {
+    const textRange = new Range(textEditor.selection.start, textEditor.selection.end);
+    return {
+        text: textEditor.document.getText(textRange),
+        textRange
+    }
 }
+export const toLowerCamelCase = (str: string) => camelCase(str);
+export const toUpperSnakeCase = (str: string) => snakeCase(str).toUpperCase();

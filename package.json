@@ -1,5 +1,5 @@
 {
-  "name": "string-util-for-vs-code",
+	"name": "string-util-for-vs-code",
 	"displayName": "string-util-for-vs-code",
 	"description": "enum小工具",
 	"version": "0.0.1",
@@ -10,7 +10,7 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:string-util-for-vs-code.toLowerCamelCase"
+		"onCommand:string-util-for-vs-code.toLowerCamelCase"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -42,19 +42,23 @@
 		"test": "node ./out/test/runTest.js"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.51.0",
 		"@types/glob": "^7.1.3",
+		"@types/lodash": "^4.14.165",
 		"@types/mocha": "^8.0.0",
 		"@types/node": "^12.11.7",
-		"eslint": "^7.9.0",
+		"@types/vscode": "^1.51.0",
 		"@typescript-eslint/eslint-plugin": "^4.1.1",
 		"@typescript-eslint/parser": "^4.1.1",
+		"eslint": "^7.9.0",
 		"glob": "^7.1.6",
 		"mocha": "^8.1.3",
+		"ts-loader": "^8.0.3",
 		"typescript": "^4.0.2",
 		"vscode-test": "^1.4.0",
-		"ts-loader": "^8.0.3",
 		"webpack": "^4.44.1",
 		"webpack-cli": "^3.3.12"
+	},
+	"dependencies": {
+		"lodash": "^4.17.20"
 	}
 }
