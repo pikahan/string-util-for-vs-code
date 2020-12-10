@@ -1,10 +1,9 @@
 import { camelCase, snakeCase } from 'lodash';
-import { Range, TextEditor, TextEditorEdit } from 'vscode';
+import { Range, TextEditor, TextEditorEdit, window } from 'vscode';
 import * as _ from 'lodash';
 
 export const getTextInfoFromSelection = (textEditor: TextEditor) => {
     const textRange = new Range(textEditor.selection.start, textEditor.selection.end);
-    console.log(textEditor.document.getText(textRange))
     return {
         text: textEditor.document.getText(textRange),
         textRange
@@ -48,7 +47,7 @@ export const runCustomFunction = _.curry((type: Mode, textEditor: TextEditor, ed
         let finalText = type === Mode.JSON_STRING ? JSON.stringify(functionResult) : functionResult.toString();
         edit.replace(textRange, finalText);
     } catch (e) {
-        console.log('格式有误')
+        window.showErrorMessage('格式错误');
     }
 });
 
