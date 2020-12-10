@@ -21,6 +21,4 @@ export class CommandHelper {
             edit.replace(textRange, textProcessor(text));
         })
     }
-
 }
-

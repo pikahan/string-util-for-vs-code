@@ -10,7 +10,10 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:string-util-for-vs-code.toLowerCamelCase"
+		"onCommand:string-util-for-vs-code.toLowerCamelCase",
+		"onCommand:string-util-for-vs-code.toUpperSnakeCase",
+		"onCommand:string-util-for-vs-code.runCustomFunctionInNormalMode",
+		"onCommand:string-util-for-vs-code.runCustomFunctionInJsonStringMode"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
@@ -19,13 +22,40 @@
 				{
 					"when": "editorFocus",
 					"command": "string-util-for-vs-code.toLowerCamelCase"
+				},
+				{
+					"when": "editorFocus",
+					"command": "string-util-for-vs-code.toUpperSnakeCase"
+				},
+				{
+					"when": "editorFocus",
+					"command": "string-util-for-vs-code.runCustomFunctionInNormalMode"
+				},
+				{
+					"when": "editorFocus",
+					"command": "string-util-for-vs-code.runCustomFunctionInJsonStringMode"
 				}
 			]
 		},
 		"commands": [
 			{
 				"command": "string-util-for-vs-code.toLowerCamelCase",
-				"title": "toLowerCamelCase",
+				"title": "->小驼峰",
+				"category": "string-util-for-vs-code"
+			},
+			{
+				"command": "string-util-for-vs-code.toUpperSnakeCase",
+				"title": "->蛇形(大写)",
+				"category": "string-util-for-vs-code"
+			},
+			{
+				"command": "string-util-for-vs-code.runCustomFunctionInNormalMode",
+				"title": "自定义转换函数",
+				"category": "string-util-for-vs-code"
+			},
+			{
+				"command": "string-util-for-vs-code.runCustomFunctionInJsonStringMode",
+				"title": "自定义转换函数(JSON格式字符串)",
 				"category": "string-util-for-vs-code"
 			}
 		]
