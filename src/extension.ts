@@ -1,17 +1,15 @@
+import { CommandHelper } from './commandHelper';
 import * as vscode from 'vscode';
-import { toLowerCamelCase } from './util';
+import { runCustomFunctionInJsonStringMode, runCustomFunctionInNormalMode, toLowerCamelCase, toUpperSnakeCase } from './util';
+
+
 
 export function activate(context: vscode.ExtensionContext) {
-	context.subscriptions.push(
-		vscode.commands.registerTextEditorCommand('string-util-for-vs-code.toLowerCamelCase', (textEditor, edit) => {
-			if (textEditor.selection.isEmpty) { // 未选中文本直接返回
-				return;
-			}
-			const textRange = new vscode.Range(textEditor.selection.start, textEditor.selection.end);
-			const text = textEditor.document.getText(textRange);
-			edit.replace(textRange, toLowerCamelCase(text));
-		})
-	)
+	const helper = new CommandHelper(context);
+	helper.replaceText('toLowerCamelCase', toLowerCamelCase);
+	helper.replaceText('toUpperSnakeCase', toUpperSnakeCase);
+	helper.registerTextEditorCommand('runCustomFunctionInNormalMode', runCustomFunctionInNormalMode)
+	helper.registerTextEditorCommand('runCustomFunctionInJsonStringMode', runCustomFunctionInJsonStringMode)
 }
 
 export function deactivate() {}
