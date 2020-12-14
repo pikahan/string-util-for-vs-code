@@ -7,7 +7,7 @@
 * 字符串 -> 驼峰/蛇形
 ![demo1](./img/demo1.gif)
 * 使用内置函数对字符串进行处理
-![demo2](./img/demo1.gif)
+![demo2](./img/demo2.gif)
 
 ## 依赖
 
