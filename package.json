@@ -2,7 +2,7 @@
 	"name": "string-util-for-vs-code",
 	"displayName": "string-util-for-vs-code",
 	"description": "字符串处理小工具",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"publisher": "lingyi",
 	"engines": {
 		"vscode": "^1.51.0"
