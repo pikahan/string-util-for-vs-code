@@ -10,6 +10,22 @@
 ![demo2](https://raw.githubusercontent.com/pikahan/string-util-for-vs-code/master/img/demo2.gif)
 ![demo3](https://raw.githubusercontent.com/pikahan/string-util-for-vs-code/master/img/demo3.gif)
 
+## 内置函数
+如果要使用内置函数处理字符串的话需要遵循以下的格式
+`待处理文本:函数名[@参数1@参数2...]`
+
+eg.
+
+如果想将一段文本以'-'分割成数组的话
+```
+["hello","every","body"]
+```
+选中后右键菜单选择自定义转换函数(JSON格式字符串)即可
+
+### 完整内置函数API列表
+1. 支持所有lodash的字符串处理函数(要移除掉第一个参数, 因为lodash中函数的第一个参数是待处理的文本)
+https://www.lodashjs.com/docs/lodash.camelCase
+
 
 ## 依赖
 
